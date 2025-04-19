@@ -1,0 +1,22 @@
+# Ignore virtual environment
+HMS_G_generator/
+!HMS_G_generator/requirements.txt
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore Windows activation/deactivation scripts and binaries
+HMS_G_generator/Scripts/
+HMS_G_generator/Include/
+HMS_G_generator/Lib/
+
+
+
+# Ignore OS-specific hidden files
+.DS_Store
+Thumbs.db
+
+# Ignore logs or temp files if any
+*.log
+*.tmp

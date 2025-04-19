@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NOAA Grid Info Generator</title>
+</head>
+<body>
+    <h1>NOAA Grid Info Generator</h1>
+
+    <p><strong>📁 Target Directory:</strong> This is the full path to the folder where your NOAA Atlas 14 <code>.asc</code> files are located. For example:</p>
+    <pre>C:\ProjectName\Hydrology\NOAA_Grids</pre>
+
+    <p><strong>📄 ASC File Naming Convention:</strong> Your files should follow a naming format that includes the return period such as:
+    <code>se10yr02ha.asc</code>, <code>se50yr03ha.asc</code>, <code>se100yr24ha.asc</code>, etc.
+    The app looks for keywords like <code>10yr</code>, <code>50yr</code>, and <code>100yr</code> in filenames.</p>
+
+    <form action="/run" method="post">
+        <label for="target_directory">Target Directory:</label><br>
+        <input type="text" id="target_directory" name="target_directory" size="100" required><br><br>
+
+        <label for="return_periods">Return Periods (comma-separated):</label><br>
+        <input type="text" id="return_periods" name="return_periods" value="100yr,50yr,10yr" required><br><br>
+
+        <button type="submit">Generate Grid File</button>
+    </form>
+
+    {% if message %}
+    <p style="color: green;"><strong>{{ message }}</strong></p>
+    {% endif %}
+</body>
+</html>
